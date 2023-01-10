@@ -163,6 +163,7 @@ namespace GMap.NET.MapProviders
         public static readonly UMPMapProvider UMPMap = UMPMapProvider.Instance;
 
         public static readonly CustomMapProvider CustomMap = CustomMapProvider.Instance;
+        public static readonly MapboxElevationMapProvider MapboxElevationMap = MapboxElevationMapProvider.Instance;
 
         /// <summary>
         ///     get all instances of the supported providers
@@ -429,7 +430,7 @@ namespace GMap.NET.MapProviders
         protected PureImage GetTileImageUsingHttp(string url)
         {
             PureImage ret = null;
-
+            Debug.WriteLine("URL = " + url); // MDF
             var request = IsSocksProxy ? SocksHttpWebRequest.Create(url) : 
                 WebRequestFactory != null ? WebRequestFactory(this, url) : WebRequest.Create(url);
 
