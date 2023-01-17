@@ -1957,6 +1957,10 @@ namespace GMap.NET.WindowsForms
 
                     OnSelectionChange?.Invoke(SelectedArea, zoomtofit);
                 }
+                else if (_selectionEnd.IsEmpty && !_selectionStart.IsEmpty)
+                {
+                    OnSelectionChange?.Invoke(SelectedArea, false);
+                }
                 else
                 {
                     Invalidate();
