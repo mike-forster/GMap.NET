@@ -212,7 +212,7 @@ namespace GMap.NET
         /// <returns></returns>
         public virtual GSize GetTileMatrixSizePixel(int zoom)
         {
-            var s = GetTileMatrixSizeXY(zoom);
+            var s = GetTileMatrixSizeXY(zoom); // gets matrix size in tiles
             return new GSize(s.Width * TileSize.Width, s.Height * TileSize.Height);
         }
 
