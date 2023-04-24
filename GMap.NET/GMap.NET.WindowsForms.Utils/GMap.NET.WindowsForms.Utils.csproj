@@ -5,7 +5,7 @@
     <Product>GMap.NET.WinForms.Utils</Product>
     <AssemblyTitle>GMap.NET.WinForms.Utils</AssemblyTitle>
     <RootNamespace>GMap.NET</RootNamespace>
-    <TargetFrameworks>net47;net6.0-windows</TargetFrameworks>
+    <TargetFrameworks>net6.0-windows</TargetFrameworks>
     <UseWindowsForms>true</UseWindowsForms>
       
     <PackageReleaseNotes>
