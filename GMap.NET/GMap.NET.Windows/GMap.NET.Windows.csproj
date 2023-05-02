@@ -5,7 +5,7 @@
     <Product>GMap.NET.Windows</Product>
     <AssemblyTitle>GMap.NET.Windows</AssemblyTitle>
     <IncludeBuildOutput>false</IncludeBuildOutput>
-    <TargetFrameworks>net6.0-windows</TargetFrameworks>
+    <TargetFramework>net6.0-windows</TargetFramework>
 
     <PackageReleaseNotes>
 Library migrated to .Net Core and published in new individual packages
@@ -19,7 +19,15 @@ History Release Notes
 https://github.com/judero01col/GMap.NET/blob/master/README.md#release-notes
     </PackageReleaseNotes>
 
-  </PropertyGroup>  
+  </PropertyGroup>
+  <!--MDF Added two PropertyGroups below-->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1416</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;1416</NoWarn>
+  </PropertyGroup>
+  
   <ItemGroup>
     <PackageReference Include="GMap.NET.WinForms" Version="$(PackageVersion)" />
     <PackageReference Include="GMap.NET.WinPresentation" Version="$(PackageVersion)" />

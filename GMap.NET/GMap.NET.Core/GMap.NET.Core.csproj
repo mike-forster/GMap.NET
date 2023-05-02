@@ -5,7 +5,7 @@
     <Product>GMap.NET.Core</Product>
     <AssemblyTitle>GMap.NET.Core</AssemblyTitle>
     <RootNamespace>GMap.NET</RootNamespace>
-    <TargetFrameworks>net6.0-windows</TargetFrameworks>
+    <TargetFramework>net6.0-windows</TargetFramework>
     
     <PackageReleaseNotes>
 - New Provider OpenStreetMapGraphHopper
@@ -27,7 +27,15 @@ https://github.com/judero01col/GMap.NET/blob/master/README.md#release-notes
     <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^netcoreapp\d'))">
         <DefineConstants>NETCORE;MONO_disabled;SQLite;MySQL_disabled;PostgreSQL_disabled;$(DefineConstants)</DefineConstants>
     </PropertyGroup>
-    
+
+  <!--MDF Added two PropertyGroups below-->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1416</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;1416</NoWarn>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />

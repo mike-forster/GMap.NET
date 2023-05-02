@@ -1,11 +1,11 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <PackageId>GMap.NET.WinForms</PackageId>
     <Product>GMap.NET.WindowsForms</Product>
     <AssemblyTitle>GMap.NET.WindowsForms</AssemblyTitle>
     
-    <TargetFrameworks>net6.0-windows</TargetFrameworks>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
     <DefineConstants>ContinuesMapNo;$(DefineConstants)</DefineConstants>
     
@@ -27,6 +27,12 @@ https://github.com/judero01col/GMap.NET/blob/master/README.md#release-notes
     </PropertyGroup>
     <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^netcoreapp\d'))">
         <DefineConstants>NETCORE;ContinuesMapNo;$(DefineConstants)</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+      <NoWarn>1701;1702;1416</NoWarn>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+      <NoWarn>1701;1702;1416</NoWarn>
     </PropertyGroup>
     
   <ItemGroup>
