@@ -173,8 +173,8 @@ namespace GMap.NET.MapProviders
         static readonly string TravelTypeFoot = "foot";
         static readonly string TravelTypeMotorCar = "motorcar";
 
-        static readonly string WalkingStr = "Walking";
-        static readonly string DrivingStr = "Driving";
+        //static readonly string WalkingStr = "Walking";
+        //static readonly string DrivingStr = "Driving";
 
         #endregion
 
