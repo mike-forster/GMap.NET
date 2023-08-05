@@ -1255,6 +1255,7 @@ namespace GMap.NET.WindowsForms
                     {
                         DrawGraphics(_gxOff);
                         e.Graphics.DrawImage(_backBuffer, 0, 0);
+                        _backBuffer.Save("MyImage.png", ImageFormat.Png); // MDF
                     }
                 }
                 else
@@ -1403,6 +1404,7 @@ namespace GMap.NET.WindowsForms
                                                         Core.TileRect.Y,
                                                         Core.TileRect.Width,
                                                         Core.TileRect.Height);
+                                                    //img.Img.Save("MyImage.png", ImageFormat.Png); // MDF
                                                 }
                                                 else
                                                 {

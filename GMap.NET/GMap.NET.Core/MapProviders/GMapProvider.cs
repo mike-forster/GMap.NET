@@ -164,6 +164,7 @@ namespace GMap.NET.MapProviders
 
         public static readonly CustomMapProvider CustomMap = CustomMapProvider.Instance;
         public static readonly MapboxElevationMapProvider MapboxElevationMap = MapboxElevationMapProvider.Instance;
+        public static readonly OpenAIPMapProvider OpenAIPMap = OpenAIPMapProvider.Instance;
 
         /// <summary>
         ///     get all instances of the supported providers
