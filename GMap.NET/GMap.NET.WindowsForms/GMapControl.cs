@@ -1255,7 +1255,6 @@ namespace GMap.NET.WindowsForms
                     {
                         DrawGraphics(_gxOff);
                         e.Graphics.DrawImage(_backBuffer, 0, 0);
-                        _backBuffer.Save("MyImage.png", ImageFormat.Png); // MDF
                     }
                 }
                 else
