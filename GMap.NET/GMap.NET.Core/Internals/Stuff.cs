@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Security.Cryptography;
+//using System.Security.Cryptography.SHA1;
 using System.Text;
 
 namespace GMap.NET.Internals
@@ -112,13 +113,14 @@ namespace GMap.NET.Internals
         static string EncryptString(string message, string passphrase)
         {
             byte[] results;
-
-            using (var hashProvider = new SHA1CryptoServiceProvider())
+            using (var hashProvider = SHA1.Create()) // MDF
+            //using (var hashProvider = new SHA1CryptoServiceProvider())
             {
                 byte[] tdesKey = hashProvider.ComputeHash(Encoding.UTF8.GetBytes(passphrase));
                 Array.Resize(ref tdesKey, 16);
 
-                using (var tdesAlgorithm = new TripleDESCryptoServiceProvider())
+                using (var tdesAlgorithm = TripleDES.Create()) // MDF
+                //using (var tdesAlgorithm = new TripleDESCryptoServiceProvider())
                 {
                     tdesAlgorithm.Key = tdesKey;
                     tdesAlgorithm.Mode = CipherMode.ECB;
@@ -151,13 +153,15 @@ namespace GMap.NET.Internals
         {
             byte[] results;
 
-            using (var hashProvider = new SHA1CryptoServiceProvider())
+            using (var hashProvider = SHA1.Create())
+            //using (var hashProvider = new SHA1CryptoServiceProvider())
             {
                 byte[] tdesKey = hashProvider.ComputeHash(Encoding.UTF8.GetBytes(passphrase));
                 Array.Resize(ref tdesKey, 16);
 
                 // Step 2. Create a new TripleDESCryptoServiceProvider object
-                using (var tdesAlgorithm = new TripleDESCryptoServiceProvider())
+                using (var tdesAlgorithm = TripleDES.Create()) // MDF
+                // using (var tdesAlgorithm = new TripleDESCryptoServiceProvider())
                 {
                     // Step 3. Setup the decoder
                     tdesAlgorithm.Key = tdesKey;
