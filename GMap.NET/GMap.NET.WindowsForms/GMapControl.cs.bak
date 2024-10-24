@@ -578,6 +578,7 @@ namespace GMap.NET.WindowsForms
         /// </summary>
         public GMapControl()
         {
+            Trace.Listeners.Clear(); // MDF added
             if (!IsDesignerHosted)
             {
                 SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
@@ -616,7 +617,6 @@ namespace GMap.NET.WindowsForms
 
         static GMapControl()
         {
-            Trace.Listeners.Clear(); // MDF added
             if (!IsDesignerHosted)
             {
                 GMapImageProxy.Enable();
