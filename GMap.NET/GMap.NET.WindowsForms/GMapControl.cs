@@ -616,7 +616,7 @@ namespace GMap.NET.WindowsForms
 
         static GMapControl()
         {
-            Trace.Listeners.Clear(); // MDF added
+            //Trace.Listeners.Clear();
             if (!IsDesignerHosted)
             {
                 GMapImageProxy.Enable();
