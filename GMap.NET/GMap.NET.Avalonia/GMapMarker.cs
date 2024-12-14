@@ -10,7 +10,7 @@ namespace GMap.NET.Avalonia
     /// </summary>
     public class GMapMarker : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         protected void OnPropertyChanged(string name)
         {
@@ -28,13 +28,13 @@ namespace GMap.NET.Avalonia
             }
         }
 
-        Visual _shape;
+        Visual? _shape;
         static readonly PropertyChangedEventArgs ShapePropertyChangedEventArgs = new PropertyChangedEventArgs(nameof(Shape));
 
         /// <summary>
         ///     marker visual
         /// </summary>
-        public Visual Shape
+        public Visual? Shape
         {
             get
             {
@@ -73,12 +73,12 @@ namespace GMap.NET.Avalonia
             }
         }
 
-        GMapControl _map;
+        GMapControl? _map;
 
         /// <summary>
         ///     the map of this marker
         /// </summary>
-        public GMapControl Map
+        public GMapControl? Map
         {
             get
             {
@@ -98,7 +98,7 @@ namespace GMap.NET.Avalonia
         /// <summary>
         ///     custom object
         /// </summary>
-        public object Tag;
+        public object? Tag;
 
         Point _offset;
 
