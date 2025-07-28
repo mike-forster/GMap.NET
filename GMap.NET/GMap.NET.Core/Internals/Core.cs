@@ -91,7 +91,7 @@ namespace GMap.NET.Internals
         public Core()
         {
             Provider = EmptyProvider.Instance;
-            Trace.Listeners.Clear(); // MDF
+            //Trace.Listeners.Clear(); // MDF added
         }
 
         /// <summary>
