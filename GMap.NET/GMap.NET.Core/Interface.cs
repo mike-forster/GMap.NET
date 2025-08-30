@@ -53,6 +53,7 @@ namespace GMap.NET
         event TileLoadComplete OnTileLoadComplete;
         event TileLoadStart OnTileLoadStart;
         event MapDrag OnMapDrag;
+        event EndDrag OnEndDrag;
         event MapZoomChanged OnMapZoomChanged;
         event MapTypeChanged OnMapTypeChanged;
 

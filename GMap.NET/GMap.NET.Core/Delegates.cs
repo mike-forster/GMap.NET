@@ -16,6 +16,8 @@ namespace GMap.NET
     public delegate void TileCacheProgress(int tilesLeft);
 
     public delegate void MapDrag();
+    
+    public delegate void EndDrag(); // MDF
 
     public delegate void MapZoomChanged();
 

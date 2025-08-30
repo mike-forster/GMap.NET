@@ -100,7 +100,7 @@ namespace GMap.NET.WindowsForms
         ///     occurs when an exception is thrown inside the map control
         /// </summary>
         public event ExceptionThrown OnExceptionThrown;
-
+        
         /// <summary>
         ///     list of overlays, should be thread safe
         /// </summary>
@@ -3242,6 +3242,20 @@ namespace GMap.NET.WindowsForms
             remove
             {
                 Core.OnMapDrag -= value;
+            }
+        }
+        /// <summary>
+        ///  MDF   occurs on map drag
+        /// </summary>
+        public event EndDrag OnEndDrag
+        {
+            add
+            {
+                Core.OnEndDrag += value;
+            }
+            remove
+            {
+                Core.OnEndDrag -= value;
             }
         }
 
