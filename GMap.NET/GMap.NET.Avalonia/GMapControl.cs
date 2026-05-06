@@ -2234,6 +2234,13 @@ namespace GMap.NET.Avalonia
             remove { _core.OnMapDrag -= value; }
         }
 
+        // MDF
+        public event EndDrag OnEndDrag
+        {
+            add { _core.OnEndDrag += value; }
+            remove { _core.OnEndDrag -= value; }
+        }
+
         public event MapZoomChanged OnMapZoomChanged
         {
             add { _core.OnMapZoomChanged += value; }

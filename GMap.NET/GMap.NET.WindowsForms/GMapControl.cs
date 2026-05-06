@@ -3244,6 +3244,20 @@ namespace GMap.NET.WindowsForms
                 Core.OnMapDrag -= value;
             }
         }
+        /// <summary>
+        ///  MDF   occurs on map drag
+        /// </summary>
+        public event EndDrag OnEndDrag
+        {
+            add
+            {
+                Core.OnEndDrag += value;
+            }
+            remove
+            {
+                Core.OnEndDrag -= value;
+            }
+        }
 
         /// <summary>
         ///     occurs on map zoom changed

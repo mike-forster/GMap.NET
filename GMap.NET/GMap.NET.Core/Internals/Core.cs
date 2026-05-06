@@ -341,6 +341,11 @@ namespace GMap.NET.Internals
         public event MapDrag OnMapDrag;
 
         /// <summary>
+        /// MDF    occurs on map drag
+        /// </summary>
+        public event EndDrag OnEndDrag;
+
+        /// <summary>
         ///     occurs on map zoom changed
         /// </summary>
         public event MapZoomChanged OnMapZoomChanged;
@@ -580,6 +585,10 @@ namespace GMap.NET.Internals
             MouseDown = GPoint.Empty;
 
             Refresh.Set();
+            if (OnEndDrag != null)
+            {
+                OnEndDrag();
+            }
         }
 
         /// <summary>

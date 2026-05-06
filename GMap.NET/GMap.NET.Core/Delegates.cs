@@ -17,6 +17,8 @@ namespace GMap.NET
 
     public delegate void MapDrag();
 
+    public delegate void EndDrag();
+
     public delegate void MapZoomChanged();
 
     public delegate void MapTypeChanged(GMapProvider type);
