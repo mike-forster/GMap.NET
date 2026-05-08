@@ -23,7 +23,9 @@ namespace GMap.NET.MapProviders
         }
 
         // https://github.com/judero01col/GMap.NET/issues/222
-        public static string OsmUserAgent = "GMap.NET";
+        //public static string OsmUserAgent = "GMap.NET";
+        public static string OsmUserAgent = "FlightTrack";
+        public readonly string ServerLetters = "abc";
         public int MinExpectedRank = 0;
 
         #region GMapProvider Members
@@ -442,15 +444,6 @@ namespace GMap.NET.MapProviders
                 request.Headers["User-Agent"] = OsmUserAgent;
             }
         }
-        //protected override void InitializeWebRequest(WebRequest request)
-        //{
-        //    base.InitializeWebRequest(request);
-
-        //    if (!string.IsNullOrEmpty(YoursClientName))
-        //    {
-        //        request.Headers.Add("X-Yours-client", YoursClientName);
-        //    }
-        //}
 
         #endregion
 

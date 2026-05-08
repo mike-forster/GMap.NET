@@ -30,9 +30,11 @@ https://github.com/judero01col/GMap.NET/blob/master/README.md#release-notes
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
       <NoWarn>1701;1702;1416</NoWarn>
+      <Optimize>False</Optimize>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
       <NoWarn>1701;1702;1416</NoWarn>
+      <Optimize>True</Optimize>
     </PropertyGroup>
     
   <ItemGroup>
