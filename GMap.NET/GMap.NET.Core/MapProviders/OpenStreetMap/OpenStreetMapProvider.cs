@@ -22,7 +22,8 @@ namespace GMap.NET.MapProviders
             Copyright = string.Format("© OpenStreetMap - Map data ©{0} OpenStreetMap", DateTime.Today.Year);
         }
 
-        public readonly string ServerLetters = "abc";
+        // https://github.com/judero01col/GMap.NET/issues/222
+        public static string OsmUserAgent = "GMap.NET";
         public int MinExpectedRank = 0;
 
         #region GMapProvider Members
@@ -432,21 +433,31 @@ namespace GMap.NET.MapProviders
         protected override void InitializeWebRequest(WebRequest request)
         {
             base.InitializeWebRequest(request);
-
-            if (!string.IsNullOrEmpty(YoursClientName))
+            if (request is HttpWebRequest r)
             {
-                request.Headers.Add("X-Yours-client", YoursClientName);
+                r.UserAgent = OsmUserAgent;
+            }
+            else if (!string.IsNullOrEmpty(OsmUserAgent))
+            {
+                request.Headers["User-Agent"] = OsmUserAgent;
             }
         }
+        //protected override void InitializeWebRequest(WebRequest request)
+        //{
+        //    base.InitializeWebRequest(request);
+
+        //    if (!string.IsNullOrEmpty(YoursClientName))
+        //    {
+        //        request.Headers.Add("X-Yours-client", YoursClientName);
+        //    }
+        //}
 
         #endregion
 
         string MakeTileImageUrl(GPoint pos, int zoom, string language)
         {
-            char letter = ServerLetters[GetServerNum(pos, 3)];
-            return string.Format(UrlFormat, letter, zoom, pos.X, pos.Y);
+            return $"https://tile.openstreetmap.org/{zoom}/{pos.X}/{pos.Y}.png";
         }
 
-        static readonly string UrlFormat = "https://{0}.tile.openstreetmap.org/{1}/{2}/{3}.png";
     }
 }
